@@ -15,11 +15,9 @@ export class ChatService {
 
   constructor(private afs: AngularFirestore, public afAuth: AngularFireAuth) {
     this.afAuth.authState.subscribe(userLoaded=>{
-      console.log("Estado de usuario: ", userLoaded);
       if(!userLoaded) return;
       this.user.name=userLoaded.displayName;
       this.user.uid=userLoaded.uid;
-      console.log("uid: ",this.user.uid);
     });
   }
 

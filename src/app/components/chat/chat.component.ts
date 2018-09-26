@@ -28,11 +28,12 @@ export class ChatComponent implements OnInit {
 
 
   send_message(){
-    console.log(this.message);
+  
     if (this.message.length==0){
       return;
     }
     this._chatServ.addMessages(this.message);
+    this.message="";
   }
 
 
